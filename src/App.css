@@ -1,0 +1,9 @@
+body { padding-top: 65px; }
+
+.white-text {
+  color:white
+}
+
+.full-screen {
+  min-height:100vh;
+}
