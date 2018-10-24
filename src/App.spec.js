@@ -1,9 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
+import Navbar from './components/navbar'
+describe('', () => {
+  let wrapper
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  })
+  it('renders without crashing', () => {
+    expect(wrapper.find('.App')).toHaveLength(1)
+    expect(wrapper.find(Navbar)).toHaveLength(1)
+  });
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+})
