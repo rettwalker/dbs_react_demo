@@ -25,15 +25,12 @@ let frameworks = [{
   name: 'jQuery',
   description: 'hmmm'
 }]
-
-let FrameworkMasterDetail = MasterDetailView(FrameworkListItem, AddFramework, frameworks)
-
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar name={name} textColor={"white-text"} />
-        <FrameworkMasterDetail />
+        <MasterDetailView items={frameworks} />
       </div>
     );
   }

@@ -15,6 +15,18 @@ import React from 'react';
 // }
 
 
-const ListView = WrappedComponent => props => <ul className="list-group list-group-flush">{props.items.map((item, index) => <li className="list-group-item" onClick={() => props.selectHandler((item.id) ? item.id : index)} key={(item.id) ? item.id : index}> <WrappedComponent {...item} /></li>)} </ul>
-
+class ListView extends React.Component {
+    render() {
+        return (<ul className="list-group list-group-flush" >
+            {
+                this.props.items.map((item, index) =>
+                    <li className="list-group-item"
+                        onClick={() => this.props.selectHandler((item.id) ? item.id : index)}
+                        key={(item.id) ? item.id : index}>
+                        <this.props.componentToRender {...item} />
+                    </li>)
+            }
+        </ul>)
+    }
+}
 export default ListView 
