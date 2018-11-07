@@ -17,15 +17,9 @@ import React from 'react';
 
 class ListView extends React.Component {
     render() {
+        console.log(this.props.componentToRender)
         return (<ul className="list-group list-group-flush" >
-            {
-                this.props.items.map((item, index) =>
-                    <li className="list-group-item"
-                        onClick={() => this.props.selectHandler((item.id) ? item.id : index)}
-                        key={(item.id) ? item.id : index}>
-                        <this.props.componentToRender {...item} />
-                    </li>)
-            }
+            {this.props.items.map((item, index) => <li className="list-group-item" onClick={() => this.props.selectHandler((item.id) ? item.id : index)} key={(item.id) ? item.id : index}> <this.props.componentToRender {...item} /></li>)}
         </ul>)
     }
 }

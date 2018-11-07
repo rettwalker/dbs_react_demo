@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/navbar';
-import FrameworkListItem from './components/frameworkListItem'
-import AddFramework from './components/addFramework'
 import MasterDetailView from './components/masterDetailView'
 let name = "DBS React DEMO"
 let frameworks = [{
